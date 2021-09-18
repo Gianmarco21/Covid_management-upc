@@ -30,7 +30,7 @@ public class UsuarioController {
 
 		this.usuario = new Usuario();
 		this.listausuarios = new ArrayList<Usuario>();
-
+		list();
 	}
 
 	// metodos
@@ -38,19 +38,20 @@ public class UsuarioController {
 	public String newUsuario() {
 
 		this.setUsuario(new Usuario());
-		return "vaccinarion.xhtml";
+		return "usuario.xhtml";
 
 	}
 
 	public void insert() {
 
 		uService.insert(usuario);
-
+		list();
+		
 	}
 
 	public void list() {
 
-		uService.list();
+		listausuarios = uService.list();
 
 	}
 

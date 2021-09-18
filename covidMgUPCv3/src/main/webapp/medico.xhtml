@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="master.xhtml">
+
+	<ui:define name="title">
+        .:Registro de Vacunatorios:.
+    </ui:define>
+
+	<ui:define name="titleCont">
+		<span>Medico</span>
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+
+			<h:outputLabel for="idMedico" value="Id del Medico"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="idMedico"
+				styleClass="form-control"
+				value="#{medicoController.medico.idMedico}" required="true" />
+
+
+			<h:outputLabel for="Nombre1" value="Primer nombre del Medico "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="Nombre1"
+				styleClass="form-control" value="#{medicoController.medico.nombre1}"
+				maxlength="50" required="true" />
+
+
+			<h:outputLabel for="Nombre2" value="Segundo nombre del Medico "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="Nombre2"
+				styleClass="form-control" value="#{medicoController.medico.nombre2}"
+				maxlength="50" required="true" />
+
+			<h:outputLabel for="Apellido1" value="Primer apellido del Medico "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="Apellido1"
+				styleClass="form-control"
+				value="#{medicoController.medico.apellido1}" maxlength="50"
+				required="true" />
+
+			<h:outputLabel for="Apellido2" value="Segundo apellido del Medico "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="Apellido2"
+				styleClass="form-control"
+				value="#{medicoController.medico.apellido2}" maxlength="50"
+				required="true" />
+
+			<h:outputLabel for="Especialidad" value="Especialidad del Medico "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="Especialidad"
+				styleClass="form-control"
+				value="#{medicoController.medico.especialidad}" maxlength="50"
+				required="true" />
+
+			<h:outputLabel for="Dni" value="Dni del Medico "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="Dni" styleClass="form-control"
+				value="#{medicoController.medico.dni}" maxlength="50"
+				required="true" />
+
+			<h:outputLabel for="Telefono" value="Teléfono del médico"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="Telefono"
+				styleClass="form-control"
+				value="#{medicoController.medico.telefono}" maxlength="50"
+				required="true" />
+
+
+			<h:outputLabel for="Email" value="Correo del médico"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="Email"
+				styleClass="form-control"
+				value="#{medicoController.medico.email}" maxlength="50"
+				required="true" />
+
+			<br />
+			<p:commandButton value="Grabar"
+				actionListener="#{medicoController.insert()}"
+				styleClass="btn btn-primary " update="@form"
+				action="listMedico?faces-redirect=true" />
+			<p:commandButton value="Cancelar"
+				action="listMedico?faces-redirect=true" immediate="true"
+				styleClass="btn btn-default" ajax="false" />
+
+
+
+		</h:form>
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>
+</html>

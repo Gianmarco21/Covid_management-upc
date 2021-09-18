@@ -30,6 +30,7 @@ public class MedicoController {
 
 		this.medico = new Medico();
 		this.listamedicos = new ArrayList<Medico>();
+		list();
 
 	}
 
@@ -39,19 +40,20 @@ public class MedicoController {
 
 		this.setMedico(new Medico());
 
-		return "vaccination.xhtml";
+		return "medico.xhtml";
 
 	}
 
 	public void insert() {
 
 		mService.insert(medico);
-
+		list();
+		
 	}
 
 	public void list() {
 
-		mService.list();
+		listamedicos = mService.list();
 
 	}
 

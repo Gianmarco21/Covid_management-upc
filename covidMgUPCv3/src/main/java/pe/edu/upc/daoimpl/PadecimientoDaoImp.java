@@ -18,7 +18,7 @@ public class PadecimientoDaoImp implements IPadecimientoDao {
 
 	@Override
 	@Transactional
-	public void inser(Padecimiento p) {
+	public void insert(Padecimiento p) {
 
 		try {
 
@@ -39,14 +39,14 @@ public class PadecimientoDaoImp implements IPadecimientoDao {
 
 		try {
 
-			Query q = em.createQuery("select v from Medico v");
+			Query q = em.createQuery("select v from Padecimiento v");
 			lista = (List<Padecimiento>) q.getResultList();
 
 		} catch (Exception e) {
 			System.out.println("Error al listar");
 		}
 
-		return null;
+		return lista;
 	}
 
 }

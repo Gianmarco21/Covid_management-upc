@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<ui:composition template="master.xhtml">
+
+
+	<ui:define name="title">
+        .:Listado de Vacunatorios:.
+    </ui:define>
+
+	<ui:define name="titleCont">
+		<span>Medicos</span>
+	</ui:define>
+
+	<ui:define name="content">
+
+		<h:form>
+			<div class="row">
+				<p:commandButton value="Nuevo"
+					action="#{medicoController.newMedico()}"
+					styleClass="btn btn-primary" ajax="false" />
+			</div>
+
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="form-group table-responsive box-table-class">
+
+						<p:dataTable id="lstMedico" var="m"
+							value="#{medicoController.listamedicos}" paginator="true"
+							paginatorPosition="top" rowsPerPageTemplate="10,20,30,40,50"
+							rows="10" styleClass="table table-bordered"
+							emptyMessage="No existen registros" rowIndexVar="item"
+							style="margin-bottom:0">
+
+							<p:column headerText="Id" sortBy="#{m.idMedico}">
+								<h:outputText value="#{m.idMedico}" />
+							</p:column>
+
+							<p:column headerText="Primer Nombre" sortBy="#{m.nombre1}">
+								<h:outputText value="#{m.nombre1}" />
+							</p:column>
+
+							<p:column headerText="Segundo Nombre" sortBy="#{m.nombre2}">
+								<h:outputText value="#{m.nombre2}" />
+							</p:column>
+
+							<p:column headerText="Primer Apellido" sortBy="#{m.apellido1}">
+								<h:outputText value="#{m.apellido1}" />
+							</p:column>
+
+							<p:column headerText="Segundo Apellido" sortBy="#{m.apellido2}">
+								<h:outputText value="#{m.apellido2}" />
+							</p:column>
+
+							<p:column headerText="Especialidad" sortBy="#{m.especialidad}">
+								<h:outputText value="#{m.especialidad}" />
+							</p:column>
+
+
+							<p:column headerText="Dni" sortBy="#{m.dni}">
+								<h:outputText value="#{m.dni}" />
+							</p:column>
+
+							<p:column headerText="Teléfono" sortBy="#{m.telefono}">
+								<h:outputText value="#{m.telefono}" />
+							</p:column>
+
+							<p:column headerText="Email" sortBy="#{m.email}">
+								<h:outputText value="#{m.email}" />
+							</p:column>
+
+
+
+
+						</p:dataTable>
+					</div>
+
+				</div>
+			</div>
+		</h:form>
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>
+</html>

@@ -37,14 +37,14 @@ public class ProvinciaDaoImpl implements IProvinciaDao {
 
 		try {
 
-			javax.persistence.Query q = em.createQuery("select v from Medico v");
+			javax.persistence.Query q = em.createQuery("select v from Provincia v");
 
 			lista = (List<Provincia>) q.getResultList();
 
 		} catch (Exception e) {
 			System.out.println("Error al listar");
 		}
-		return null;
+		return lista;
 	}
 
 }

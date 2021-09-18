@@ -39,14 +39,14 @@ public class UsuarioDaoImpl implements IUsuarioDao {
 
 		try {
 
-			Query q = em.createQuery("select v from Usuario");
+			Query q = em.createQuery("select v from Usuario v");
 			lista = (List<Usuario>) q.getResultList();
 
 		} catch (Exception e) {
-
+			System.out.println("Error al listar");
 		}
 
-		return null;
+		return lista;
 	}
 
 }

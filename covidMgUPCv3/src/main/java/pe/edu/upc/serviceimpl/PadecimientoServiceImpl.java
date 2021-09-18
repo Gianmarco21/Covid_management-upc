@@ -20,14 +20,14 @@ public class PadecimientoServiceImpl implements IPadecimientoService{
 	
 	@Override
 	public void insert(Padecimiento p) {
-	pDao.inser(p);
+	pDao.insert(p);
 		
 	}
 
 	@Override
 	public List<Padecimiento> list() {
 		// TODO Auto-generated method stub
-		return null;
+		return pDao.list();
 	}
 
 	

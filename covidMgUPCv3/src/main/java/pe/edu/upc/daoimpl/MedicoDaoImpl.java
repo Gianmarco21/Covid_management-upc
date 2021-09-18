@@ -42,7 +42,7 @@ public class MedicoDaoImpl implements IMedicoDao {
 		} catch (Exception e) {
 			System.out.println("Error al listar");
 		}
-		return null;
+		return lista;
 	}
 
 }

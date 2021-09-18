@@ -30,7 +30,8 @@ public class PadecimientoController {
 
 		this.padecimiento = new Padecimiento();
 		this.listapadecimientos = new ArrayList<Padecimiento>();
-
+		list();
+		
 	}
 
 	// Metodos
@@ -38,19 +39,19 @@ public class PadecimientoController {
 	public String newPadecimiento() {
 
 		this.setPadecimiento(new Padecimiento());
-		return "vaccinationcenter.xhtml";
+		return "padecimiento.xhtml";
 
 	}
 
 	public void insert() {
 
 		pService.insert(padecimiento);
-
+		list();
 	}
 
 	public void list() {
 
-		pService.list();
+		listapadecimientos = pService.list();
 
 	}
 

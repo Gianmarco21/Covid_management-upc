@@ -29,6 +29,7 @@ public class ProvinciaController {
 
 		this.provincia = new Provincia();
 		this.listaprovincias = new ArrayList<Provincia>();
+		list();
 
 	}
 
@@ -44,12 +45,13 @@ public class ProvinciaController {
 	public void insert() {
 
 		prService.insert(provincia);
-
+		list();
+		
 	}
 
 	public void list() {
 
-		prService.list();
+		listaprovincias = prService.list();
 
 	}
 

@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="master.xhtml">
+
+	<ui:define name="title">
+        .:Registro de Vacunatorios:.
+    </ui:define>
+
+	<ui:define name="titleCont">
+		<span>Usuario</span>
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form>
+
+			<h:outputLabel for="idUsuario" value="Id del Usuario"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="idUsuario"
+				styleClass="form-control"
+				value="#{usuarioController.usuario.idUsuario}" required="true" />
+
+
+			<h:outputLabel for="Nombre1" value="Primer nombre del Usuario "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="Nombre1"
+				styleClass="form-control"
+				value="#{usuarioController.usuario.nombre1}" maxlength="50"
+				required="true" />
+
+
+			<h:outputLabel for="Nombre2" value="Segundo nombre del Usuario "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="Nombre2"
+				styleClass="form-control"
+				value="#{usuarioController.usuario.nombre2}" maxlength="50"
+				required="true" />
+
+			<h:outputLabel for="Apellido1" value="Primer apellido del Usuario "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="Apellido1"
+				styleClass="form-control"
+				value="#{usuarioController.usuario.apellido1}" maxlength="50"
+				required="true" />
+
+			<h:outputLabel for="Apellido2" value="Segundo apellido del Usuario "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="Apellido2"
+				styleClass="form-control"
+				value="#{usuarioController.usuario.apellido2}" maxlength="50"
+				required="true" />
+
+			<h:outputLabel for="Dni" value="Dni del Usuario "
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="Especialidad"
+				styleClass="form-control" value="#{usuarioController.usuario.dni}"
+				maxlength="50" required="true" />
+
+			<h:outputLabel for="Email" value="Email del Usuario"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="Dni" styleClass="form-control"
+				value="#{usuarioController.usuario.email}" maxlength="50"
+				required="true" />
+
+			<h:outputLabel for="Telefono" value="Teléfono del Usuario"
+				styleClass="control-label" />
+			<p:inputText autocomplete="off" id="Telefono"
+				styleClass="form-control"
+				value="#{usuarioController.usuario.telefono}" maxlength="50"
+				required="true" />
+
+
+			<br />
+			<p:commandButton value="Grabar"
+				actionListener="#{usuarioController.insert()}"
+				styleClass="btn btn-primary " update="@form"
+				action="listUsuario?faces-redirect=true" />
+			<p:commandButton value="Cancelar"
+				action="listUsuario?faces-redirect=true" immediate="true"
+				styleClass="btn btn-default" ajax="false" />
+
+
+
+		</h:form>
+	</ui:define>
+
+	<ui:define name="footerCont">
+
+	</ui:define>
+</ui:composition>
+</html>
